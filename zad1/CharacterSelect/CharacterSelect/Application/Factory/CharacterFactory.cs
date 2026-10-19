@@ -1,3 +1,4 @@
+
 using CharacterSelect.Domain.Character;
 using CharacterSelect.Domain.Entity;
 using CharacterSelect.Domain.Enum;
@@ -11,8 +12,11 @@ public static class CharacterFactory
         return cls switch
         {
             CharacterClass.Warrior => new Warrior(name ?? "Warrior"),
-            CharacterClass.Mage    => new Mage(name ?? "Mage"),
-            CharacterClass.Rogue   => new Rogue(name ?? "Rogue"),
+            CharacterClass.Mage => new Mage(name ?? "Mage"),
+            CharacterClass.Rogue => new Rogue(name ?? "Rogue"),
+            CharacterClass.Knight => new Knight(name ?? "Knight"),
+            CharacterClass.Archer => new Archer(name ?? "Archer"),
+            CharacterClass.Necromancer => new Necromancer(name ?? "Necromancer"),
             _ => throw new ArgumentOutOfRangeException(nameof(cls), "Nieznana klasa postaci.")
         };
     }
